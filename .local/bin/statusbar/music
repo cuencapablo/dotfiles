@@ -1,0 +1,14 @@
+#!/bin/sh
+
+status=$(playerctl status)
+artist=$(playerctl metadata artist | sed 's/ -.*//') # youtube print [artist - topic], we just need artist
+title=$(playerctl metadata title)
+# music=$(playerctl metadata --format "{{ artist }} ~ {{ title }}" )
+
+if [ "$status" = "Paused" ]; then
+	echo ^c#a38a5b^"$artist 󰏤 $title"
+elif [ "$status" = "Playing" ]; then
+	echo ^c#a38a5b^"$artist 󰎈 $title"
+else
+	echo ^c#a38a5b^"󰎈"
+fi

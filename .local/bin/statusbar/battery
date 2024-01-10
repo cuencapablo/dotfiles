@@ -1,0 +1,29 @@
+#!/bin/sh
+bat=$(cat /sys/class/power_supply/BAT0/capacity)
+chrg=$(cat /sys/class/power_supply/BAT0/status)
+
+if [ "$chrg" == Charging ]; then
+	if [ "$bat" -lt 25 ]; then
+		echo ^c#135813^" CHARGE "
+	elif [ "$bat" -eq 100 ]; then
+		echo ^c#a38a5b^"  $bat% "
+	elif [ "$bat" -ge 75 ]; then
+		echo ^c#114F11^"   $bat% "
+	elif [ "$bat" -ge 50 ]; then
+		echo ^c#114F11^"   $bat% "
+	else
+		echo ^c#114F11^"   $bat% "
+	fi
+else
+	if [ "$bat" -lt 25 ]; then
+		echo ^c#932020^" CHARGE "
+	elif [ "$bat" -eq 100 ]; then
+		echo ^c#a38a5b^"  $bat% "
+	elif [ "$bat" -ge 75 ]; then
+		echo ^c#a38a5b^"   $bat% "
+	elif [ "$bat" -ge 50 ]; then
+		echo ^c#a38a5b^"   $bat% "
+	else
+		echo ^c#a38a5b^"   $bat% "
+	fi
+fi

@@ -1,0 +1,31 @@
+/*
+
+## Home files
+!.xbindkeysrc
+!.xinitrc
+!.zshenv
+!.gitignore
+
+## Local files
+!.local/
+.local/*
+!.local/bin/
+.local/bin/bunx
+
+## Config files
+!.config/
+.config/*
+!.config/betterlockscreen/
+!.config/fd/
+!.config/nvim/
+!.config/picom/
+!.config/suckless/
+!.config/x/
+!.config/zsh/
+.config/zsh/*
+!.config/zsh/.fzf.zsh
+!.config/zsh/.zprofile
+!.config/zsh/.zshrc
+!.config/zsh/aliasrc
+.config/tmux/plugins/
+!.config/tmux/

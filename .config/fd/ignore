@@ -1,0 +1,61 @@
+# Main folders
+!Desktop/
+!Documents/
+!Downloads/
+!Ists/
+!Pictures/
+!non/
+
+# Home files
+.gitconfig
+.mariadb_history
+.osh-update
+.sdirs
+.xsession*
+# Home folders
+.cache/
+.cargo/
+**.git/
+.gnupg/
+.librewolf/
+**node_modules/
+.m2/
+.mongodb/
+.mplayer/
+.npm/
+.pki/
+.ssh/
+.vscode-oss/
+.zoom/
+
+# Local files
+.local/share/
+.local/state/
+
+# Config files
+.config/*
+!.config/alacritty/
+!.config/betterlockscreen/
+!.config/fd/
+!.config/nvim/
+!.config/picom/
+!.config/redshift/
+!.config/suckless/
+!.config/x/
+!.config/zathura/
+.config/zsh/oh-my-zsh/
+!.config/zsh/
+.config/tmux/plugins/
+!.config/tmux/
+
+# Latex files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+REDSHIFT_PID=$(pidof -s redshift)
+
+if [[ $? == 0 ]]; then
+	kill -s USR1 $REDSHIFT_PID
+fi

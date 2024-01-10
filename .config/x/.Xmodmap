@@ -1,0 +1,3 @@
+remove  mod3 = ISO_Level5_Shift
+keycode  37 = ISO_Level5_Shift
+clear Lock

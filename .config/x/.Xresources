@@ -1,0 +1,48 @@
+XTerm*locale: true
+XTerm*utf8Title: true
+xterm*termName: Uxterm-256color
+XTerm*fontMenu*fontdefault*Label: Default
+XTerm*faceName: JetBrainsMono Nerd Font
+XTerm*faceNameDoublesize: JetBrainsMono Nerd Font
+XTerm*faceSize: 18
+XTerm.cjkWidth:true
+XTerm*background: #181816
+XTerm*foreground: gray
+XTerm*scrollBar: false
+XTerm*rightScrollBar: true
+XTerm*jumpScroll:  true
+XTerm*SaveLines: 1000
+
+!Colors
+!-------------------------
+!black
+XTerm*color0: #222222
+XTerm*color8: #454545
+
+!red
+XTerm*color1: #9E5641
+XTerm*color9: #CC896D
+
+!green
+XTerm*color2: #6C7E55
+XTerm*color10: #C4DF90
+
+!yellow
+XTerm*color3: #CAAF2B
+XTerm*color11: #FFE080
+
+!blue
+XTerm*color4: #7FB8D8
+XTerm*color12: #B8DDEA
+
+!magenta
+XTerm*color5: #956D9D
+XTerm*color13: #C18FCB
+
+!cyan
+XTerm*color6: #4c8ea1
+XTerm*color14: #6bc1d0
+
+!white
+XTerm*color7: #808080
+XTerm*color15: #cdcdcd

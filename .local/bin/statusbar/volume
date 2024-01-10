@@ -1,0 +1,17 @@
+#!/bin/sh
+muted=$(pactl list sinks | awk '/Mute:/ { print $2 }')
+vol=$(pactl list sinks | grep Volume: | awk 'FNR == 1 { print $5 }' | cut -f1 -d '%')
+
+# If muted, print  and exit.
+[ "$muted" == "yes" ] && echo ^c#FAF4EB^" MUTED " && exit
+[ "$vol" == 100 ] && echo ^c#a39a5b^"  FULL " && exit
+
+case 1 in
+$((vol >= 70))) icon="󰕾 " ;;
+$((vol >= 40))) icon=" " ;;
+$((vol >= 10))) icon=" " ;;
+$((vol >= 0))) icon="  " ;;
+*) exit ;;
+esac
+
+echo ^c#a39a5b^"$icon$vol% "
