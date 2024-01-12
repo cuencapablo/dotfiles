@@ -41,11 +41,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Load fnm for node versions
 eval "$(fnm env)"
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
 ## background
-/usr/bin/feh --no-fehbg --bg-fill '/home/non/Pictures/wallpaper/bluescreen.png'
+/usr/bin/feh --no-fehbg --bg-fill '/home/non/Pictures/wallpaper/girlBirdGun.png'
 ## programs
 xbindkeys &
 unclutter &

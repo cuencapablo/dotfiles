@@ -1,6 +1,15 @@
 alias vi=nvim
 alias svi="sudo -Es nvim"
 
+alias gs='git status'
+alias gdf='git diff'
+alias gl='git log'
+alias gck='git checkout'
+alias gp='git push'
+alias gpl='git pull'
+alias gaa='git add . '
+alias gc="git commit -m "
+
 alias nmount="sudo mount -o gid=users,fmask=113,dmask=002 /dev/sdb1 xrousbn"
 alias unmount="sudo umount /dev/sdb1"
 
@@ -41,3 +50,4 @@ function sshn() {
     ssh-add -D
     ssh-add ~/.ssh/id_$1
 }
+

@@ -7,6 +7,9 @@
 !non/
 
 # Home files
+**/vendor/
+**.vscode/
+**.idea/
 .gitconfig
 .mariadb_history
 .osh-update
@@ -15,6 +18,8 @@
 # Home folders
 .cache/
 .cargo/
+.dbgate/
+.bun/
 **.git/
 .gnupg/
 .librewolf/

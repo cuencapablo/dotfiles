@@ -1,5 +1,4 @@
 return {
-  {
     "loctvl842/monokai-pro.nvim",
     -- lazy = false, -- Set true to not load the plugin. Or false to load.
     event = "VeryLazy",
@@ -18,12 +17,12 @@ return {
         annotation = { italic = true },
         tag_attribute = { italic = true }, -- attribute of tag in reactjs
       },
-      filter = "ristretto", -- classic | octagon | pro | machine | ristretto | spectrum
+      filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
       -- Enable this will disable filter option
       day_night = {
         enable = false, -- turn off by default
-        day_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
-        night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+        day_filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
+        night_filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
       },
       inc_search = "background", -- underline | background
       background_clear = {
@@ -42,12 +41,11 @@ return {
           underline_visible = false,
         },
         indent_blankline = {
-          context_highlight = "default", -- default | pro
+          context_highlight = "pro", -- default | pro
           context_start_underline = false,
         },
       },
       -- ---@param c Colorscheme
       -- override = function(c) end,
     },
-  },
 }

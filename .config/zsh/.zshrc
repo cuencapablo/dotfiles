@@ -1,11 +1,11 @@
 # Bat configuration theme
-export BAT_THEME="Solarized (light)"
+export BAT_THEME="Solarized (dark)"
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 # bun completions
-[ -s "/home/non/.bun/_bun" ] && source "/home/non/.bun/_bun"
+# [ -s "/home/non/.bun/_bun" ] && source "/home/non/.bun/_bun"
 
 # pnpm
 export PNPM_HOME="/home/non/.local/share/pnpm"

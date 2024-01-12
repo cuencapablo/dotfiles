@@ -95,10 +95,10 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 2;
 
 /* bg opacity */
-float alpha = 0.95;
+float alpha = 0.90;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
@@ -127,7 +127,7 @@ static const char *colorname[] = {
 
     /* more colors can be added after 255 to use with DefaultXX */
     "#DCD7BA", /* 256: default foreground colour */
-    "#171822", /* default background colour */
+    "#0B0B10", /* default background colour */
     // "#181816", /* 257: default background colour */
 };
 /* Terminal colors for alternate (light) palette */
