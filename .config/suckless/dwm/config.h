@@ -183,7 +183,7 @@ ResourcePref resources[] = {
 #include <X11/XF86keysym.h>
 
 static const char *rangercmd[] = {TERMINAL, "-n", "ranger", "-e", "ranger", NULL};
-static const char *lock[] = {"/usr/bin/betterlockscreen", "-l", "dim", NULL};
+static const char *lock[] = {"/usr/bin/betterlockscreen", "-l", "dimblur", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */

@@ -31,9 +31,9 @@ vim.api.nvim_create_autocmd("FileType", {
 -- ------------------------------------------------------------------------- }}}
 -- {{{ Disable autoformat for expecific files
 autocmd({ "FileType" }, {
-    pattern = { "lua", "cpp", "txt" },
+    pattern = { "cpp", },
     callback = function()
-        vim.b.autoformat = false
+        vim.g.autoformat = false
     end,
 })
 

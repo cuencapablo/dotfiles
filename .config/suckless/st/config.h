@@ -128,7 +128,7 @@ static const char *colorname[] = {
     /* more colors can be added after 255 to use with DefaultXX */
     "#DCD7BA", /* 256: default foreground colour */
     "#0B0B10", /* default background colour */
-    // "#181816", /* 257: default background colour */
+               // "#181816", /* 257: default background colour */
 };
 /* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
@@ -261,10 +261,14 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (Mod1Mask | ShiftMask)
 
-static char *openurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL};
-static char *copyurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL};
-static char *copyoutput[] = {"/bin/sh", "-c", "st-copyout", "externalpipe", NULL};
-// static char *editscreen[] = { "/bin/sh", "-c", "st-editscreen", "externalpipe", NULL };
+static char *openurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -o",
+                             "externalpipe", NULL};
+static char *copyurlcmd[] = {"/bin/sh", "-c", "st-urlhandler -c",
+                             "externalpipe", NULL};
+static char *copyoutput[] = {"/bin/sh", "-c", "st-copyout", "externalpipe",
+                             NULL};
+static char *editscreen[] = {"/bin/sh", "-c", "st-editscreen", "externalpipe",
+                             NULL};
 
 static Shortcut shortcuts[] = {
     /* mask                 keysym          function        argument */
@@ -302,11 +306,10 @@ static Shortcut shortcuts[] = {
     {TERMMOD, XK_U, zoom, {.f = +1}},
     {TERMMOD, XK_D, zoom, {.f = -1}},
     {MODKEY, XK_l, externalpipe, {.v = openurlcmd}},
-    {MODKEY, XK_y, externalpipe, {.v = copyurlcmd}},
+    {MODKEY, XK_r, externalpipe, {.v = copyurlcmd}},
     {MODKEY, XK_o, externalpipe, {.v = copyoutput}},
     {TERMMOD, XK_Return, newterm, {.i = 0}},
-    // { MODKEY,               XK_g,           externalpipe,   {.v = editscreen
-    // } },
+    {MODKEY, XK_exclam, externalpipe, {.v = editscreen}},
 
 };
 
