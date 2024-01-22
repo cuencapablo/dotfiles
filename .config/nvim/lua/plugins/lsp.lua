@@ -43,8 +43,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      inlay_hints = { enabled = false },
+      inlay_hints = { enabled = true },
       servers = {
+        eslint = {
+          settings = {
+            format = false,
+          },
+        },
         tailwindcss = {
           hover = true,
           root_dir = function(...)
@@ -55,7 +60,7 @@ return {
         },
         tsserver = {
           root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+            return require("lspconfig.util").root_pattern("tsconfig.json")(...)
           end,
           single_file_support = false,
           settings = {

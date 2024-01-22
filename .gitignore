@@ -25,6 +25,7 @@
 !.config/zsh/
 .config/zsh/*
 !.config/zsh/.fzf.zsh
+!.config/zsh/.p10k.zsh
 !.config/zsh/.zprofile
 !.config/zsh/.zshrc
 !.config/zsh/aliasrc

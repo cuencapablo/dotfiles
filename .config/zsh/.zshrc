@@ -1,8 +1,9 @@
-# Bat configuration theme
-export BAT_THEME="Solarized (dark)"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # bun completions
 # [ -s "/home/non/.bun/_bun" ] && source "/home/non/.bun/_bun"
@@ -26,7 +27,7 @@ HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 autoload -U colors && colors	# Load colors
 setopt AUTO_CD # Automatically cd into typed directory.
 setopt COMPLETE_IN_WORD
-stty stop undef		# Disable ctrl-s to freeze terminal.
+stty stop undef <$TTY >$TTY     # Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 # Basic auto/tab complete:
@@ -58,22 +59,16 @@ function zle-keymap-select () {
 zle -N zle-keymap-select
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    echo -ne '\e[5 q'
 }
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Edit line in vim with ctrl-e:
-# autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
-
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
-[ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
-[ -f "$HOME/.config/zsh/.fzf.zsh" ] && source "$HOME/.config/zsh/.fzf.zsh"
+source "$HOME/.config/zsh/aliasrc"
+source "$HOME/.config/zsh/.fzf.zsh"
+source "$HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme"
 
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-eval "$(starship init zsh)"
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

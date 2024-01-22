@@ -330,36 +330,11 @@ return {
 
   {
     "rcarriga/nvim-notify",
-    -- enabled = false, -- To  disable a plugin
-    keys = {
-      {
-        "<leader>un",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
-        desc = "Delete all Notifications",
-      },
-    },
     opts = {
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
       timeout = 1000,
-      render = "compact",
+      render = "minimal",
       stages = "static",
     },
-    init = function()
-      -- when noice is not enabled, install notify on VeryLazy
-      local Util = require("lazyvim.util")
-      if not Util.has("noice.nvim") then
-        Util.on_very_lazy(function()
-          vim.notify = require("notify")
-        end)
-      end
-    end,
   },
 
   {
@@ -372,43 +347,25 @@ return {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
-        hover = {
-          enabled = false,
-          view = nil, -- when nil, use defaults from documentation
-          opts = {}, -- merged with defaults from documentation
-        },
-        signature = {
-          enabled = false,
-          auto_open = {
-            enabled = true,
-            trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
-            luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-            throttle = 50, -- Debounce lsp signature help request by 50ms
+        hover = { enabled = false },
+        signature = { enabled = false },
+        progress = { enabled = false },
+      },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            any = {
+              { find = "%d+L, %d+B" },
+              { find = "; after #%d+" },
+              { find = "; before #%d+" },
+            },
           },
-          view = nil, -- when nil, use defaults from documentation
-          opts = {}, -- merged with defaults from documentation
-        },
-        progress = {
-          enabled = false,
-          -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
-          -- See the section on formatting for more details on how to customize.
-          --- @type NoiceFormat|string
-          format = "lsp_progress",
-          --- @type NoiceFormat|string
-          format_done = "lsp_progress_done",
-          throttle = 1000 / 30, -- frequency to update lsp progress message
           view = "mini",
         },
-        message = {
-          -- Messages shown by lsp servers
-          enabled = true,
-          view = "notify",
-          opts = {},
-        },
       },
+
       messages = {
-        -- NOTE: If you enable messages, then the cmdline is enabled automatically.
-        -- This is a current Neovim limitation.
         enabled = false, -- enables the Noice messages UI - That shit on the botton right
         view = "notify", -- default view for messages
         view_error = "notify", -- view for errors
@@ -417,38 +374,11 @@ return {
         view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
       },
       presets = {
-        bottom_search = false, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
-        long_message_to_split = false, -- long messages will be sent to a split
-        inc_rename = true, -- enables an input dialog for inc-rename.nvim
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = true,
         lsp_doc_border = false, -- add a border to hover docs and signature help
-      },
-      views = {
-        cmdline_popup = {
-          border = {
-            -- style = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█", "1" }, -- [ top top top - right - bottom bottom bottom - left ]
-            style = "rounded",
-            padding = { 0, 1 },
-          },
-          filter_options = {},
-        },
-      },
-      popupmenu = {
-        enabled = true, -- enables the Noice popupmenu UI
-        ---@type 'nui'|'cmp'
-        backend = "nui", -- backend to use to show regular cmdline completions
-        ---@type NoicePopupmenuItemKind|false
-        -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
-        kind_icons = {}, -- set to `false` to disable icons
-      },
-      cmdline = {
-        enabled = true, -- enables the Noice cmdline UI
-        view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-        opts = {}, -- global options for the cmdline. See section on views
-      },
-      redirect = {
-        view = "popup",
-        filter = { event = "msg_show" },
       },
     },
   },

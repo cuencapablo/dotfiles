@@ -82,22 +82,22 @@ return {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
     opts = {
-      colors = {}, -- Override default colors or create your own
-      highlights = {}, -- Override default highlight groups or create your own
-      styles = { -- For example, to apply bold and italic, use "bold,italic"
-        types = "bold", -- Style that is applied to types
-        methods = "NONE", -- Style that is applied to methods
-        numbers = "NONE", -- Style that is applied to numbers
-        strings = "NONE", -- Style that is applied to strings
-        comments = "italic", -- Style that is applied to comments
-        keywords = "bold, italic", -- Style that is applied to keywords
-        constants = "NONE", -- Style that is applied to constants
-        functions = "bold", -- Style that is applied to functions
-        operators = "NONE", -- Style that is applied to operators
-        variables = "NONE", -- Style that is applied to variables
-        parameters = "NONE", -- Style that is applied to parameters
-        conditionals = "NONE", -- Style that is applied to conditionals
-        virtual_text = "NONE", -- Style that is applied to virtual text
+      colors = {},
+      highlights = {},
+      styles = { -- use "bold,italic"
+        types = "bold",
+        methods = "NONE",
+        numbers = "NONE",
+        strings = "NONE",
+        comments = "italic",
+        keywords = "bold, italic",
+        constants = "NONE",
+        functions = "bold",
+        operators = "NONE",
+        variables = "NONE",
+        parameters = "NONE",
+        conditionals = "NONE",
+        virtual_text = "NONE",
       },
       filetypes = { -- Override which filetype highlight groups are loaded
         comment = true,
@@ -163,6 +163,7 @@ return {
         cursorline = true, -- Use cursorline highlighting?
         transparency = true, -- Use a transparent background?
         terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+        lualine_transparency = true, -- Center bar transparenty?
         highlight_inactive_windows = false, -- When the window is out of focus, change the normal background?
       },
     },

@@ -20,9 +20,9 @@ return {
         desc = "Resume the previous telescope picker", },
       { ";e", function() local builtin = require("telescope.builtin") builtin.diagnostics() end,
         desc = "Lists Diagnostics for all open buffers or a specific buffer", },
-      { ";s", function() local builtin = require("telescope.builtin") builtin.treesitter() end,
+      { "sf", function() local builtin = require("telescope.builtin") builtin.treesitter() end,
         desc = "Lists Function names, variables, from Treesitter", },
-      { "sf", function() local telescope = require("telescope") local function telescope_buffer_dir() return vim.fn.expand("%:p:h")
+      { ";s", function() local telescope = require("telescope") local function telescope_buffer_dir() return vim.fn.expand("%:p:h")
           end
 
           telescope.extensions.file_browser.file_browser({
@@ -146,40 +146,31 @@ return {
 
   {
     "stevearc/conform.nvim",
-    dependencies = { "mason.nvim" },
-    lazy = true,
-    cmd = "ConformInfo",
-    opts = function()
-      ---@class ConformOpts
-      local opts = {
-        -- LazyVim will use these options when formatting with the conform.nvim formatter
-        format = {
-          timeout_ms = 3000,
-          async = false, -- not recommended to change
-          quiet = false, -- not recommended to change
-        },
-        ---@type table<string, conform.FormatterUnit[]>
-        formatters_by_ft = {
-          ["lua"] = { "stylua" },
-          ["javascript"] = { "prettier" },
-          ["javascriptreact"] = { "prettier" },
-          ["typescript"] = { "prettier" },
-          ["typescriptreact"] = { "prettier" },
-          ["vue"] = { "prettier" },
-          ["css"] = { "prettier" },
-          ["scss"] = { "prettier" },
-          ["less"] = { "prettier" },
-          ["html"] = { "prettier" },
-          ["json"] = { "prettier" },
-          ["jsonc"] = { "prettier" },
-          ["yaml"] = { "prettier" },
-          ["markdown"] = { "prettier" },
-          ["markdown.mdx"] = { "prettier" },
-          ["graphql"] = { "prettier" },
-          ["handlebars"] = { "prettier" },
-        },
-      }
-      return opts
-    end,
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        svelte = { { "prettierd", "prettier" } },
+        javascript = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        javascriptreact = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
+        json = { { "prettierd", "prettier" } },
+        graphql = { { "prettierd", "prettier" } },
+        java = { "google-java-format" },
+        kotlin = { "ktlint" },
+        ruby = { "standardrb" },
+        markdown = { { "prettierd", "prettier" } },
+        erb = { "htmlbeautifier" },
+        html = { "htmlbeautifier" },
+        bash = { "beautysh" },
+        proto = { "buf" },
+        rust = { "rustfmt" },
+        yaml = { "yamlfix" },
+        toml = { "taplo" },
+        css = { { "prettierd", "prettier" } },
+        scss = { { "prettierd", "prettier" } },
+      },
+    },
   },
 }
