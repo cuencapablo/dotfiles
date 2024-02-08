@@ -596,11 +596,11 @@ xkb_symbols "dvp" {
    key <AC03> { [            e,           E,          eacute,     Eacute,   NoSymbol,   NoSymbol   ] };
    key <AC04> { [            u,           U,          uacute,     Uacute,   NoSymbol,   NoSymbol   ] };
    key <AC05> { [            i,           I,   	      iacute,     Iacute,   NoSymbol,   NoSymbol   ] };
-   key <AC06> { [            d,           D,             eth,        ETH,   NoSymbol,   NoSymbol   ] };
-   key <AC07> { [            h,           H,         notsign,   multiply,       Left,       Left   ] };
-   key <AC08> { [            t,           T,           thorn,      THORN,       Down,       Down   ] };
+   key <AC06> { [            d,           D,       therefore,    because,   NoSymbol,   NoSymbol   ] };
+   key <AC07> { [            h,           H,        notequal,  identical,       Left,       Left   ] };
+   key <AC08> { [            t,           T,         notsign,  plusminus,       Down,       Down   ] };
    key <AC09> { [            n,           N,          ntilde,     Ntilde,         Up,         Up   ] };
-   key <AC10> { [            s,           S,          ssharp,      U1E9E,      Right,      Right   ] };
+   key <AC10> { [            s,           S,        Greek_pi,   infinity,      Right,      Right   ] };
    key <AC11> { [        minus,  underscore,          macron,dead_macron,   NoSymbol,   NoSymbol   ] };
    key <BKSL> { [    backslash,         bar,          degree,  brokenbar,   NoSymbol,   NoSymbol   ] };
 
@@ -612,7 +612,7 @@ xkb_symbols "dvp" {
    key <AB04> { [            k,           K,          oslash,     Oslash,   NoSymbol,   NoSymbol   ] };
    key <AB05> { [            x,           X,        NoSymbol,   NoSymbol,   NoSymbol,   NoSymbol   ] };
    key <AB06> { [            b,           B,        NoSymbol,   NoSymbol,   NoSymbol,   NoSymbol   ] };
-   key <AB07> { [            m,           M,        NoSymbol,   NoSymbol,      Prior,      Prior   ] };
+   key <AB07> { [            m,           M,        multiply,   division,      Prior,      Prior   ] };
    key <AB08> { [            w,           W,        NoSymbol,   NoSymbol,        End,        End   ] };
    key <AB09> { [            v,           V,        NoSymbol,   NoSymbol,       Home,       Home   ] };
    key <AB10> { [            z,           Z,        NoSymbol,   NoSymbol,       Next,       Next   ] };
