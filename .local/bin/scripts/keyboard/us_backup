@@ -585,9 +585,9 @@ xkb_symbols "dvp" {
    key <AD06> { [            f,           F,        NoSymbol,   NoSymbol,   NoSymbol,   NoSymbol   ] };
    key <AD07> { [            g,           G,        NoSymbol,   NoSymbol,   NoSymbol,   NoSymbol   ] };
    key <AD08> { [            c,           C,        ccedilla,   Ccedilla,   NoSymbol,   NoSymbol   ] };
-   key <AD09> { [            r,           R,      registered,  trademark,     Delete,     Delete   ] };
-   key <AD10> { [            l,           L,        NoSymbol,   NoSymbol,  BackSpace,  BackSpace   ] };
-   key <AD11> { [        slash,    question,    questiondown,  copyright,      Clear,      Clear   ] };
+   key <AD09> { [            r,           R,      registered,  trademark,     Delete,   NoSymbol   ] };
+   key <AD10> { [            l,           L,        NoSymbol,   NoSymbol,  BackSpace,   NoSymbol   ] };
+   key <AD11> { [        slash,    question,    questiondown,  copyright,   NoSymbol,   NoSymbol   ] };
    key <AD12> { [           at, asciicircum, dead_circumflex, dead_caron,   NoSymbol,   NoSymbol   ] };
 
    // home row
@@ -597,10 +597,10 @@ xkb_symbols "dvp" {
    key <AC04> { [            u,           U,          uacute,     Uacute,   NoSymbol,   NoSymbol   ] };
    key <AC05> { [            i,           I,   	      iacute,     Iacute,   NoSymbol,   NoSymbol   ] };
    key <AC06> { [            d,           D,       therefore,    because,   NoSymbol,   NoSymbol   ] };
-   key <AC07> { [            h,           H,        notequal,  identical,       Left,       Left   ] };
-   key <AC08> { [            t,           T,         notsign,  plusminus,       Down,       Down   ] };
-   key <AC09> { [            n,           N,          ntilde,     Ntilde,         Up,         Up   ] };
-   key <AC10> { [            s,           S,        Greek_pi,   infinity,      Right,      Right   ] };
+   key <AC07> { [            h,           H,        notequal,  identical,       Left,   NoSymbol   ] };
+   key <AC08> { [            t,           T,         notsign,  plusminus,       Down,   NoSymbol   ] };
+   key <AC09> { [            n,           N,          ntilde,     Ntilde,         Up,   NoSymbol   ] };
+   key <AC10> { [            s,           S,        Greek_pi,   infinity,      Right,   NoSymbol   ] };
    key <AC11> { [        minus,  underscore,          macron,dead_macron,   NoSymbol,   NoSymbol   ] };
    key <BKSL> { [    backslash,         bar,          degree,  brokenbar,   NoSymbol,   NoSymbol   ] };
 
