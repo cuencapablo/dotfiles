@@ -1,0 +1,15 @@
+# Main options
+set icons
+#set relativenumber
+#set number
+#set hidden!
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set incsearch
+set incfilter
+set shell "zsh"
+set cursorpreviewfmt "\033[7m"
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
