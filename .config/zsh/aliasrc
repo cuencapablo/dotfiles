@@ -2,7 +2,7 @@ alias vi=nvim
 alias svi="sudo -Es nvim"
 
 alias gs='git status'
-alias gdf='git diff'
+alias gf='git diff'
 alias gl='git log'
 alias gp='git push'
 alias gpu='git push -u origin main'
@@ -12,32 +12,28 @@ alias gaa='git add .'
 alias gc="git commit -m"
 alias gce="git config user.email"
 alias gcn="git config user.name"
-alias gupm="gcn 'Pablo Cuenca' | gce '148780611+cuencapm@users.noreply.github.com' "
-alias gucp="gcn 'Cuenca Pablo' | gce '108037606+cuencapablo@users.noreply.github.com' "
 
-
-alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
+alias l='eza -G'   # Display as a grid
+alias ls='eza -a'   # Display as a grid
+alias la='eza -la'   # Display all files
+alias ld='eza -D1'   # Display just directories one per line
+alias ll='eza -l1a' # Display all files one per line
 
 alias nmount="sudo mount -o gid=users,fmask=113,dmask=002 /dev/sdb1 xrousbn"
 alias unmount="sudo umount /dev/sdb1"
 
-alias cpTemplate="cp ~/Ists/plantilla/plantilla.tex"
-alias viTemplate="nvim ~/Ists/plantilla/plantilla.tex"
+alias cpdoc="cp ~/Ists/Plantilla/plantilla.tex"
+alias vidoc="nvim ~/Ists/Plantilla/plantilla.tex"
 
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias tme="tmux a -t me"
-alias tists="tmux a -t ists"
 
 alias za="zathura"
 
 alias lg=lazygit
 
-alias bib="nvim ~/non/refs.bib"
+alias bib="nvim ~/Ists/refs.bib"
 
 alias count="find . -type f | wc -l"
 
@@ -48,18 +44,5 @@ alias cs="xclip -selection clipboard"
 alias vs="xclip -o -selection clipboard"
 
 alias sharescreen="xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1"
-alias sharescreem_right="xrandr --auto --output HDMI-1 --auto --right-of eDP-1"
-alias sharescreem_left="xrandr --auto --output HDMI-1 --auto --left-of eDP-1"
-
-function run() {
-    g++ -std=c++17 -Wshadow -Wall -Wextra -g -D_GLIBCXX_DEBUG -o a $1
-    chmod +x a
-    ./a
-}
-
-function sshn() {
-    eval $(ssh-agent)
-    ssh-add -D
-    ssh-add ~/.ssh/id_$1
-}
-
+alias sharescreen_right="xrandr --auto --output HDMI-1 --auto --right-of eDP-1"
+alias sharescreen_left="xrandr --auto --output HDMI-1 --auto --left-of eDP-1"
