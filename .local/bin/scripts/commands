@@ -1,53 +1,50 @@
-/* Update the grub, when istalling new themes */
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+## Update the grub, when istalling new themes
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-# Share screen HDMI-1
-xrandr --output HDMI--11 --mode 1920x1080
+## Fix font rendering for many webpages, that request "Helvetica" font".
+# Or you just con install helvetica some how
+  sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+## Update font cache
+  fc-cache -vf
 
-/* 256-color palette for zsh */
-for code in {000..255}; do print -P -- "$code: %F{$code}Color%f"; done
+## Share screen HDMI-1
+  xrandr --output HDMI--11 --mode 1920x1080
 
-/* 256-color palette for bash */
-for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Color"; done
+## 256-color palette for zsh
+  for code in {000..255}; do print -P -- "$code: %F{$code}Color%f"; done
 
-/* Convertir imagen to pdf */
-    mogrify -format pdf my_image.jpg
-/* Convertir varias imagenes a pdf */
-    convert "*.{png,jpeg}" -quality 100 outfile.pdf
+## 256-color palette for bash
+  for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Color"; done
 
-/* Set default application in linux arch */
-xdg-mime default application mimetype(s)
-xdg-mime default sxiv.desktop image/png
+## Convertir imagen to pdf
+  mogrify -format pdf my_image.jpg
+## Convertir varias imagenes a pdf
+  convert "*.{png,jpeg}" -quality 100 outfile.pdf
 
-/* Para activar la camara en pantalla y tomar una foto usar 's' */
-/* mplayer también reproduce música */
-mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot
+## Set default application in linux arch/gtk?
+  xdg-mime default application mimetype(s)
+  xdg-mime default sxiv.desktop image/png
 
-/* Para activar la camara y grabar un video. Ctrl+c para terminar de grabar */
-mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o filename.avi
+## Para activar la camara en pantalla y tomar una foto usar 's'
+## mplayer también reproduce música
+  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screens
 
-/* Git commands */
-git add .
-git reset .
-git remote add origin <link>
-git commit -m " message "
-git push --set-upstream origin <branch_name>
-git clone
-git fetch
+## Para activar la camara y grabar un video. Ctrl+c para terminar de grabar
+  mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o filename.avi
 
-/* Set default output device */
-echo "set-default-sink  alsa_output.pci-0000_00_1b.0.analog-stereo" | pacmd
+## Set default output device
+  echo "set-default-sink  alsa_output.pci-0000_00_1b.0.analog-stereo" | pacmd
 
-/* Change audio output device */
-pacmd set-sink-port alsa_output.pci-0000_00_1b.0.analog-stereo analog-output-headphones
-pacmd set-sink-port alsa_output.pci-0000_00_1b.0.analog-stereo analog-output-speaker
+## Change audio output device
+  pacmd set-sink-port alsa_output.pci-0000_00_1b.0.analog-stereo analog-output-headphones
+  pacmd set-sink-port alsa_output.pci-0000_00_1b.0.analog-stereo analog-output-speaker
 
-/* Set default source; Built in stereo* */
-pacmd "set-default-source alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
+## Set default source; Built in stereo*
+  pacmd "set-default-source alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"
 
-// Change st defaults settings
-xrdb -merge .Xresources
+## Load Xresources changes
+  xrdb -merge .Xresources
 
-// How to know the name of a wifi red
-sudo nmcli connection show WiFiName -s | grep psk
+## How to know the name of a wifi red
+  sudo nmcli connection show WiFiName | grep -v -E 'flags|key' | grep psk
 
