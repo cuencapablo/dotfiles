@@ -1,41 +1,24 @@
 # Main folders
-!Desktop/
+!Dev/
 !Documents/
 !Downloads/
 !Ists/
 !Pictures/
-!non/
+!xrousbn/
 
-# Home files
-**/vendor/
-**.vscode/
-**.mozilla/
-**.idea/
-.gitconfig
-.mariadb_history
-.osh-update
-.sdirs
-.xsession*
 # Home folders
 .cache/
-.cargo/
-.dbgate/
-.java/
-.bun/
-**.git
+.astro/
+.dbus/
+.icons/
 **.git/
-.gnupg/
-.librewolf/
+**.git
 **node_modules/
-**.next/
-.m2/
-.mongodb/
-.mplayer/
 .npm/
-.pki/
+go/
+.mozilla/
 .ssh/
-.vscode-oss/
-.zoom/
+.texlive2023/
 
 # Local files
 .local/share/

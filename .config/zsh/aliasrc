@@ -1,5 +1,5 @@
 alias vi=nvim
-alias svi="sudo -Es nvim"
+alias svi="sudo -E nvim"
 alias xi="sudo xbps-install"
 alias xr="sudo xbps-remove"
 alias xq="xbps-query"
@@ -43,6 +43,11 @@ alias count="find . -type f | wc -l"
 
 alias e="exit"
 alias c="clear"
+
+function run() {
+    gcc $1 -lm
+    ./a.out
+}
 
 alias cs="xclip -selection clipboard"
 alias vs="xclip -o -selection clipboard"

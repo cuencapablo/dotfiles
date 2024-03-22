@@ -31,7 +31,7 @@ export READER=sioyek
 eval "$(fnm env)"
 
 ## background
-/usr/bin/feh --no-fehbg --bg-fill '/home/non/Pictures/wallpaper/errorfun.png'
+/usr/bin/feh --no-fehbg --bg-fill '/home/non/Pictures/wallpaper/land.png'
 ## programs
 tmux has-session -t me || st -n me -e tmux new -s me &
 xbindkeys &
