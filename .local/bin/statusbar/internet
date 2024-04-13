@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # Show wifi  (red)  and percent strength or  (normal color) if none.
 
@@ -8,4 +8,4 @@ up) wifiicon=^c#a38a5b^" " ;;
 	# up) wifiicon=^c#a38a5b^"$(awk '/^\s*w/ { print "   ", int($3 * 100 / 70) "% " }' /proc/net/wireless)" ;;
 esac
 
-printf "$wifiicon "
+echo "$wifiicon "

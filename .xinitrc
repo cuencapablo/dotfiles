@@ -13,9 +13,11 @@ fi
 
 # --- General Settings --- #
 ## variables
-export PATH=$HOME/.local/bin:$HOME/.local/share/applications/:$HOME/.local/bin/statusbar:$PATH
+PATH=$HOME/.local/bin:$HOME/.local/share/applications/:$HOME/.local/bin/statusbar:$PATH
+PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
+export PATH
 export EDITOR=nvim
-export READER=sioyek
+export READER=zathura
 
 # fnm
 export PATH="/home/non/.local/share/fnm:$PATH"

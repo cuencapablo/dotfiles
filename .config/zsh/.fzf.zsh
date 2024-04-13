@@ -17,8 +17,8 @@ Find_Edit() {
     )
     mimetype=$(file  --dereference --brief --mime-type  "$file" )
     case "$mimetype" in
-        image/*)                          nsxiv "$file" & disown ;;
-        application/pdf)                  sioyek "$file" & disown ;;
+        image/*)                          feh "$file" & disown ;;
+        application/pdf)                  zathura "$file" & disown ;;
         text/* | application/* | */xml)   $EDITOR "$file" ;;
         video/*)                          mpv "$file" & disown ;;
         audio/*)                          ncmpcpp "$file" & disown ;;

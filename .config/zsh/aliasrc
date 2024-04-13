@@ -24,7 +24,7 @@ alias la='ls -Ah --color=tty'        #long list,show almost all,show type,human 
 alias ll='ls -lAh --color=tty'           #long list
 alias lh='ls -ld .* --color=tty'
 
-alias nmount="sudo mount -o gid=users,fmask=113,dmask=002 /dev/sdb1 xrousbn"
+alias nmount="sudo mount -o gid=users /dev/sdb1 media"
 alias unmount="sudo umount /dev/sdb1"
 
 alias cpdoc="cp ~/Ists/Plantilla/plantilla.tex"

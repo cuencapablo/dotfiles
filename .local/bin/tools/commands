@@ -48,3 +48,5 @@
 ## How to know the name of a wifi red
   sudo nmcli connection show WiFiName | grep -v -E 'flags|key' | grep psk
 
+## Mount A iso file
+  mount -t iso9660 -o ro,loop,noauto /path/your.iso /mnt
