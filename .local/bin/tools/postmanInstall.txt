@@ -1,0 +1,22 @@
+# Install Postman in any distro:
+su -
+gzip -d Postman-linux-x64-XXXXXtar.gz
+tar -xvf Postman-linux-x64-XXXXX.tar
+mv Postman/ /opt/postman
+chmod +x /opt/postman/Postman
+ln -s /opt/postman/Postman /usr/local/bin/postman
+
+# CREATE DESKTOP ENTRY:
+vim /usr/share/applications/postman.desktop
+AND PUT THIS:
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Comment=Postman
+Exec=postman %U
+Icon=/opt/postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Development;
+StartupNotify=true

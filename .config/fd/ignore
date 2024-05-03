@@ -7,8 +7,15 @@
 !xrousbn/
 
 # Home folders
+Postman/
 .cache/
 .astro/
+.cargo/
+.java/
+.p/
+.pki/
+.swt/
+.vscode-oss/
 .dbus/
 .icons/
 **.git/
