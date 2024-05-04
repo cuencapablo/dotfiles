@@ -15,7 +15,6 @@ fi
 ## variables
 PATH=$HOME/.local/bin:$HOME/.local/share/applications/:$HOME/.local/bin/statusbar:$PATH
 PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
-PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH
 export PATH
 export EDITOR=nvim
 export READER=zathura
