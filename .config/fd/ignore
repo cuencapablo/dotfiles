@@ -11,6 +11,7 @@ Postman/
 .cache/
 .astro/
 .cargo/
+.eclipse/
 .java/
 .p/
 .pki/

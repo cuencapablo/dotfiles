@@ -1,31 +1,117 @@
 /* :root{--WindowDraggingFromNewtabButton: no-drag}  /*  For windows  */
-:root{--WindowDraggingFromNewtabButton: drag !important}  /* For linux */
+:root {
+  --WindowDraggingFromNewtabButton: drag !important;
+} /* For linux */
 
 /* Navbar size calc stuff */
-:root{
---tab-border-radius: 3px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
---NavbarWidth: 43; /*  Default values: 36 - 43  */
---TabsHeight: 30; /*  Minimum: 30  *//*  Default: 36  */
---TabsBorder: 8; /*  Doesnt do anything on small layout  *//*  Default: 8  */
---NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */
+:root {
+  --tab-border-radius: 3px !important; /*  Tab border radius -- Changes the tabs rounding  */ /*  Default: 6px  */
+  --NavbarWidth: 43; /*  Default values: 36 - 43  */
+  --TabsHeight: 30; /*  Minimum: 30  */ /*  Default: 36  */
+  --TabsBorder: 8; /*  Doesnt do anything on small layout  */ /*  Default: 8  */
+  --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))
+    /*  Only on small layout  */
+    /*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  */
+    /*  Default as a number: 44  */;
 }
 
-@media screen and (min-width:1325px)    /*  Only the tabs space will grow from here  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
+@media screen and (min-width: 1325px) /* Only the tabs space will grow from here */ {
+  :root #nav-bar {
+    margin-top: calc(
+      var(--TabsHeight) * -1px - var(--TabsBorder) * 1px
+    ) !important;
+    height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px);
+  }
+  #TabsToolbar {
+    margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important;
+  }
+  #nav-bar {
+    margin-right: calc(
+      100vw - calc(1325px / 100 * var(--NavbarWidth))
+    ) !important;
+    vertical-align: center !important;
+  }
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important;
+  }
+  toolbarspring {
+    display: none !important;
+  }
+}
 
-@media screen and (min-width:850px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+@media screen and (min-width: 850px) and (max-width: 1324px) /* Both the tabs space and the navbar will grow */ {
+  :root #nav-bar {
+    margin-top: calc(
+      var(--TabsHeight) * -1px - var(--TabsBorder) * 1px
+    ) !important;
+    height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px);
+  }
+  #TabsToolbar {
+    margin-left: calc(var(--NavbarWidth) * 1vw) !important;
+  }
+  #nav-bar {
+    margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important;
+    vertical-align: center !important;
+  }
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important;
+  }
+  toolbarspring {
+    display: none !important;
+  }
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top 0.25s !important;
+  }
+}
 
-@media screen and (max-width:849px)    /*  The window is not enough wide for a one line layout  */
-{:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
-#nav-bar, #PersonalToolbar{background-color: #0000 !important;background-image: none !important; box-shadow: none !important} #nav-bar{margin-left: 3px;} .tab-background, .tab-stack { min-height: calc(var(--TabsHeight) * 1px) !important}
+@media screen and (max-width: 849px) /* The window is not enough wide for a one line layout */ {
+  :root #nav-bar {
+    padding: 0 5px 0 5px !important;
+    height: calc(var(--NavbarHeightSmall) * 1px) !important;
+  }
+  toolbarspring {
+    display: none !important;
+  }
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top 0.25s !important;
+  }
+}
+#nav-bar,
+#PersonalToolbar {
+  background-color: #0000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+#nav-bar {
+  margin-left: 3px;
+}
+.tab-background,
+.tab-stack {
+  min-height: calc(var(--TabsHeight) * 1px) !important;
+}
 
 /*  Removes rounding from the top corners,   */
-#navigator-toolbox{appearance: none !important; border-radius: 0 !important}
-#navigator-toolbox-background{background-color: Field !important; background-image: none !important;  appearance: none !important; border-radius: 0 !important}
+#navigator-toolbox {
+  appearance: none !important;
+  border-radius: 0 !important;
+}
+#navigator-toolbox-background {
+  background-color: Field !important;
+  background-image: none !important;
+  appearance: none !important;
+  border-radius: 0 !important;
+}
 
-#navigator-toolbox-background:-moz-window-inactive{filter: contrast(90%);}  /*  Fades window while not in focus */
-:root{--tabpanel-background-color: -moz-Dialog !important}  /*  Removes flash before loading pages  */
+#navigator-toolbox-background:-moz-window-inactive {
+  filter: contrast(90%);
+} /*  Fades window while not in focus */
+:root {
+  --tabpanel-background-color: -moz-Dialog !important;
+} /*  Removes flash before loading pages  */
 
 /*  Removes annoying buttons and spaces */
 #alltabs-button,
@@ -34,54 +120,163 @@
 #save-to-pocket-button,
 #tracking-protection-icon-container,
 .titlebar-spacer[type="pre-tabs"],
-.titlebar-spacer[type="post-tabs"]{display: none !important}
-#tabbrowser-tabs{border-inline-start-width: 0!important}
+.titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
+#tabbrowser-tabs {
+  border-inline-start-width: 0 !important;
+}
 
 /* Newtab hack */
-#tabs-newtab-button, #new-tab-button{transition: .3s !important;color: transparent !important; fill: FieldText !important; background: none !important; opacity: 20%; padding-right: 20px  !important; padding-left: 4px !important; -moz-window-dragging: var(--WindowDraggingFromNewtabButton)}
-#tabs-newtab-button:hover, #new-tab-button:hover{transition: .3s !important; color: transparent !important; fill: FieldText !important; opacity: 90%; padding-right: 20px !important;  background: none !important; padding-left: 4px !important; -moz-window-dragging: var(--WindowDraggingFromNewtabButton)}
-#tabs-newtab-button > .toolbarbutton-icon , #new-tab-button > .toolbarbutton-icon{ background: none !important;}
+#tabs-newtab-button,
+#new-tab-button {
+  transition: 0.3s !important;
+  color: transparent !important;
+  fill: FieldText !important;
+  background: none !important;
+  opacity: 20%;
+  padding-right: 20px !important;
+  padding-left: 4px !important;
+  -moz-window-dragging: var(--WindowDraggingFromNewtabButton);
+}
+#tabs-newtab-button:hover,
+#new-tab-button:hover {
+  transition: 0.3s !important;
+  color: transparent !important;
+  fill: FieldText !important;
+  opacity: 90%;
+  padding-right: 20px !important;
+  background: none !important;
+  padding-left: 4px !important;
+  -moz-window-dragging: var(--WindowDraggingFromNewtabButton);
+}
+#tabs-newtab-button > .toolbarbutton-icon,
+#new-tab-button > .toolbarbutton-icon {
+  background: none !important;
+}
 
 /*  Removes urlbar border/background  */
-#urlbar-background{border: none !important; outline: none !important; transition: .15s !important;}
+#urlbar-background {
+  border: none !important;
+  outline: none !important;
+  transition: 0.15s !important;
+}
 
 /*  Cool animation on tab/bookmark icons  */
-.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}
-.tabbrowser-tab:not([pinned]):hover .tab-icon-image,.bookmark-item:hover .toolbarbutton-icon{opacity: 100!important; transition: .15s !important; display: inline-block!important; width: 16px!important; padding-left: 0!important}
-.tabbrowser-tab:not([hover]) .tab-icon-image,.bookmark-item:not([hover]) .toolbarbutton-icon{padding-left: 0!important}
+.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image,
+.bookmark-item .toolbarbutton-icon {
+  opacity: 0 !important;
+  transition: 0.15s !important;
+  width: 0 !important;
+  padding-left: 16px !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-icon-image,
+.bookmark-item:hover .toolbarbutton-icon {
+  opacity: 100 !important;
+  transition: 0.15s !important;
+  display: inline-block !important;
+  width: 16px !important;
+  padding-left: 0 !important;
+}
+.tabbrowser-tab:not([hover]) .tab-icon-image,
+.bookmark-item:not([hover]) .toolbarbutton-icon {
+  padding-left: 0 !important;
+}
 
 /* Remove "This time search with:..." */
-#urlbar .search-one-offs { display: none !important }
+#urlbar .search-one-offs {
+  display: none !important;
+}
 
 /*  Removes space after pinned tabs  */
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {margin-inline-start: 0!important}
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}
 
 /*  X-button on the tabs  */
-.tabbrowser-tab:not(:hover) .tab-close-button{opacity: 0% !important; transition: .3s !important; display: -moz-box !important;}
-.tab-close-button[selected]:not(:hover){opacity: 45% !important; transition: .3s !important; display: -moz-box !important;}
-.tabbrowser-tab:hover .tab-close-button{opacity: 50%; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
-.tab-close-button:hover{opacity: 100% !important; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
-.tab-close-button[selected]:hover{opacity: 100% !important; transition: .3s !important; background: none !important; cursor: pointer; display: -moz-box !important;}
+.tabbrowser-tab:not(:hover) .tab-close-button {
+  opacity: 0% !important;
+  transition: 0.3s !important;
+  display: -moz-box !important;
+}
+.tab-close-button[selected]:not(:hover) {
+  opacity: 45% !important;
+  transition: 0.3s !important;
+  display: -moz-box !important;
+}
+.tabbrowser-tab:hover .tab-close-button {
+  opacity: 50%;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
+.tab-close-button:hover {
+  opacity: 100% !important;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
+.tab-close-button[selected]:hover {
+  opacity: 100% !important;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
 
 /*  Removes annoying border  */
-#navigator-toolbox{border:none !important;}
+#navigator-toolbox {
+  border: none !important;
+}
 
 /*  Removes the background from the urlbar while not in use  */
-#urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background {box-shadow: none!important; background: #0000 !important}
+#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+  box-shadow: none !important;
+  background: #0000 !important;
+}
 
 /*  Makes the space between the reload button and the urlbar less akwardly large  */
-#urlbar-container{margin-left: 1px !important}
+#urlbar-container {
+  margin-left: 1px !important;
+}
 
 /*  Navbar buttons order  */
-#nav-bar{direction: rtl;} #urlbar-container, #customizationui-widget-panel{direction: ltr !important;}
-#forward-button{order: -1 !important;}
-#back-button{padding-right: 2px !important;} #forward-button{padding-right: 8px !important;}
+#nav-bar {
+  direction: rtl;
+}
+#urlbar-container,
+#customizationui-widget-panel {
+  direction: ltr !important;
+}
+#forward-button {
+  order: -1 !important;
+}
+#back-button {
+  padding-right: 2px !important;
+}
+#forward-button {
+  padding-right: 8px !important;
+}
 
 /* Remove fullscreen warning border */
-#fullscreen-warning{border: none !important; background: -moz-Dialog !important}
+#fullscreen-warning {
+  border: none !important;
+  background: -moz-Dialog !important;
+}
 
 /*  Titlebar buttons */
-.titlebar-min, .titlebar-close, .titlebar-restore, .titlebar-max {display: none !important}
+.titlebar-min,
+.titlebar-close,
+.titlebar-restore,
+.titlebar-max {
+  display: none !important;
+}
 
 /* Minimize fullscreen transition time */
-#navigator-toolbox[fullscreenShouldAnimate] { transition: 50ms !important; }
+#navigator-toolbox[fullscreenShouldAnimate] {
+  transition: 50ms !important;
+}
